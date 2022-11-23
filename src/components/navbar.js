@@ -2,8 +2,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import React from 'react';
+import Form from 'react-bootstrap/Form';
 
-const NavbarElement = () => {
+const NavbarElement = (props) => {
+  const {mode, setDarkMode} = props;
   return (
     <>
       <Container className="navbar">
@@ -19,6 +21,13 @@ const NavbarElement = () => {
               </Nav>
           </Navbar.Collapse>
         </Container>
+        <Form >
+          <Form.Check 
+            type="switch"
+            id="custom-switch"
+            onClick={() => setDarkMode(!mode)}
+          />
+        </Form>
       </Navbar>
       </Container>
     </>

@@ -13,6 +13,18 @@
   justify-content: center
 }
 
+.form-switch .form-check-input:checked {
+  background-color: black;
+}
+
+.form-switch .form-check-input::before {
+  background-color: #28a745;
+}
+
+.form-switch .form-check-input::after {
+  background-color: white;
+}
+
 @media (max-width: 800px) {
   .navbar {
     display: flex;
