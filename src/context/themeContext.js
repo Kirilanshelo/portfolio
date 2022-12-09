@@ -1,11 +1,31 @@
-import { createContext } from "react";
+import React, { useState } from "react";
 
-export const themes = {
-  dark: "",
-  light: "white-content",
+export const GlobalContext = React.createContext({
+  currentTheme: "",
+  themeSwitchHandler: () => {},
+});
+
+const GlobalContextProvider = (props) => {
+  const [currentTheme, setCurrentTheme] = useState(
+    window.localStorage.getItem("theme") == null
+      ? "light"
+      : window.localStorage.getItem("theme")
+  );
+
+  const themeSwitchHandler = (themeType) => {
+    setCurrentTheme(themeType);
+  };
+
+  return (
+    <GlobalContext.Provider
+      value={{
+        theme: currentTheme,
+        themeSwitchHandler: themeSwitchHandler,
+      }}
+    >
+      {props.children}
+    </GlobalContext.Provider>
+  );
 };
 
-export const ThemeContext = createContext({
-    theme: themes.dark,
-  changeTheme: () => {},
-});
+export default GlobalContextProvider;

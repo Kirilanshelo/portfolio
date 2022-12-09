@@ -1,15 +1,19 @@
-import React from "react";
+import React, {useContext} from "react";
+import { GlobalContext } from "../context/themeContext";
 
 const Experience = () => {
+
+  const {theme} = useContext(GlobalContext)
+  
   return (
-    <div id="experience" className="experience">
-      <h2 className="subtitle">Experiences</h2>
+    <div id="experience" className={`experience-${theme}`}>
+      <h2 className={`subtitle-${theme}`}>Experiences</h2>
       <div className="row exp-row">
         <div className="col-md-3 col-0"></div>
         <div className="col-md-6 col-12 exp-section">
           <div className="row">
             <div className="col-md-4">
-              <h3 className="section-title">Education</h3>
+              <h3 className={`section-title-${theme}`}>Education</h3>
             </div>
             <div className="col-md-8">
             </div>
@@ -23,7 +27,7 @@ const Experience = () => {
               <div className="row">
                 <div className="col">
                   <h5>Master's Degree: Astronomy</h5>
-                  <p className="edu-desc">Final mark 110/110 with a thesis about how the stellar rotation influences black hole formation (<a href="https://arxiv.org/abs/1909.01371" target="_blank" rel="noreferrer">here</a>). Many courses about physics, math, cosmology and astrophysics </p>
+                  <p className="edu-desc">Final mark 110/110 with a thesis about how the stellar rotation influences black hole formation (<a className={`emph-name-${theme}`} href="https://arxiv.org/abs/1909.01371" target="_blank" rel="noreferrer">here</a>). Many courses about physics, math, cosmology and astrophysics </p>
                 </div>
               </div>
             </div>
@@ -47,7 +51,7 @@ const Experience = () => {
 
           <div className="row">
             <div className="col-md-4">
-              <h3 className="section-title" >Career</h3>
+              <h3 className={`section-title-${theme}`} >Career</h3>
             </div>
             <div className="col-md-8">
             </div>
