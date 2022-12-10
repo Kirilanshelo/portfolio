@@ -72,6 +72,22 @@ p {
   font-size: 1.2rem;
 }
 
+.background-light {
+  border-color: #CE1212;
+}
+
+.background-dark {
+  border-color: #10A19D;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("./assets/burger-light.svg") !important;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  background-image: url("./assets/burger-dark.svg") !important;
+}
+
 .icon-light {
   color: #CE1212
 }

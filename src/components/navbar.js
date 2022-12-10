@@ -13,7 +13,7 @@ const NavbarElement = () => {
       <Container className={`navbar-${theme}`}>
       <Navbar collapseOnSelect expand="sm" className="navbar">
         <Container>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" data-bs-target="#responsive-navbar-nav"/>
+          <Navbar.Toggle className={`background-${theme}`} aria-controls="responsive-navbar-nav" data-bs-target="#responsive-navbar-nav"/>
           <Navbar.Collapse id="responsive-navbar-nav">
               <Nav>
                 <Nav.Link className={theme} href="#aboutme">About Me</Nav.Link>
@@ -23,14 +23,6 @@ const NavbarElement = () => {
               </Nav>
           </Navbar.Collapse>
         </Container>
-        
-        {/* <Form >
-          <Form.Check 
-            type="switch"
-            id="custom-switch"
-            onClick={() => setDarkMode(!mode)}
-          />
-        </Form> */}
       </Navbar>
       </Container>
       <ThemeButton />
