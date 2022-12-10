@@ -280,7 +280,7 @@ a:hover {
   text-align: left;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1200px) {
   .ab-section {
     text-align: center;
   }
