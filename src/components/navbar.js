@@ -9,7 +9,7 @@ const NavbarElement = () => {
   const {theme} = useContext(GlobalContext)
 
   return (
-    <>
+    <div className="horizontal-nav">
       <Container className={`navbar-${theme}`}>
       <Navbar collapseOnSelect expand="sm" className="navbar">
         <Container>
@@ -23,7 +23,7 @@ const NavbarElement = () => {
               </Nav>
           </Navbar.Collapse>
         </Container>
-        <ThemeButton />
+        
         {/* <Form >
           <Form.Check 
             type="switch"
@@ -33,7 +33,8 @@ const NavbarElement = () => {
         </Form> */}
       </Navbar>
       </Container>
-    </>
+      <ThemeButton />
+    </div>
   );
 }
 

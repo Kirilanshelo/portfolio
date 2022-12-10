@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Form from 'react-bootstrap/Form';
 import { GlobalContext } from "../context/themeContext";
 const ThemeButton = (props) => {
@@ -13,6 +14,7 @@ const ThemeButton = (props) => {
   }
 
   return (
+    <div className='theme-button'>
     <Form>
       <Form.Check 
         type="switch"
@@ -20,7 +22,11 @@ const ThemeButton = (props) => {
         onClick={handleToggleTheme}
       />
     </Form>
-  )
+    {theme === 'dark' ?
+      <FontAwesomeIcon className={`icon-${theme}`} icon="fa-regular fa-moon" />
+      : <FontAwesomeIcon className={`icon-${theme}`} icon="fa-regular fa-sun" />}
+    </div>
+    )
 }
 
 export default ThemeButton;

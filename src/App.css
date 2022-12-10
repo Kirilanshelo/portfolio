@@ -21,6 +21,10 @@
   color: white
 }
 
+.horizontal-nav {
+  display: flex;
+  flex-direction: row;
+}
 .dark {
   color: white
 }
@@ -47,11 +51,39 @@
     align-items: center;
     justify-content: flex-start;
   }
+
+  .navbar-light {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: black
+  }
+  
+  .navbar-dark {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white
+  }
 }
 
 p {
   line-height: 2;
   font-size: 1.2rem;
+}
+
+.icon-light {
+  color: #CE1212
+}
+
+.icon-dark {
+  color: #10A19D
+}
+
+.theme-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .top-container-light {
