@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.44673ae7.css",
+    "main.css": "/portfolio/static/css/main.414ac8cd.css",
     "main.js": "/portfolio/static/js/main.6c13bfc9.js",
     "static/js/787.9aca7108.chunk.js": "/portfolio/static/js/787.9aca7108.chunk.js",
     "static/media/enrico-sunglasses.jpg": "/portfolio/static/media/enrico-sunglasses.4843b9cc582f49a6d436.jpg",
     "index.html": "/portfolio/index.html",
     "static/media/burger-dark.svg": "/portfolio/static/media/burger-dark.bc5c62bbdee649f1a980.svg",
     "static/media/burger-light.svg": "/portfolio/static/media/burger-light.7266c26d5af5804786b8.svg",
-    "main.44673ae7.css.map": "/portfolio/static/css/main.44673ae7.css.map",
+    "main.414ac8cd.css.map": "/portfolio/static/css/main.414ac8cd.css.map",
     "main.6c13bfc9.js.map": "/portfolio/static/js/main.6c13bfc9.js.map",
     "787.9aca7108.chunk.js.map": "/portfolio/static/js/787.9aca7108.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.44673ae7.css",
+    "static/css/main.414ac8cd.css",
     "static/js/main.6c13bfc9.js"
   ]
 }
