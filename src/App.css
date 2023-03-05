@@ -309,7 +309,7 @@ a:hover {
 
 .section-subtitle {
   font-weight: bold;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .line-break {
