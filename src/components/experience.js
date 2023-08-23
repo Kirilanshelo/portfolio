@@ -28,20 +28,20 @@ const Experience = () => {
               <div className="row">
                 <div className="col">
                   <h5>Full-Stack Developer</h5>
-                  <p className="edu-desc"> My tasks are mainly focused on the backend side of a B2B platform that manage advertising on digital device. </p>
-                  <p className="edu-desc"> In my day to day work my tasks are:I take care of the automated tests </p>
+                  <p className="edu-desc"> My tasks are mainly focused on the backend side of a B2B platform that manages digital advertising. </p>
+                  <p className="edu-desc"> My day to day tasks are:</p>
                   <ul className={`list-group-${theme}`}>
                       <li className="list-group-item borderless">
-                          Develop and mantain about 15 services, most of them in Node.js, while others in TypeScript;
+                          <p className="edu-desc">- Develop and mantain about 15 services, most of them in Node.js, while others in TypeScript;</p>
                       </li>
                       <li className="list-group-item borderless">
-                          Improve test coverage and bug fixing
+                      <p className="edu-desc">- Improve test coverage and bug fixing</p>
                       </li>
                       <li className="list-group-item borderless">
-                          With my collegues we define define and document software requirements and specification
+                      <p className="edu-desc">- Define and document software requirements and specification together with my collegues</p>
                       </li>
                       <li className="list-group-item borderless">
-                          CI/CD
+                      <p className="edu-desc">- CI/CD</p>
                       </li>
                   </ul>
                 </div>
@@ -57,7 +57,7 @@ const Experience = () => {
               <div className="row">
                 <div className="col">
                   <h5>Full-Stack Developer</h5>
-                  <p className="edu-desc">Full-Stack developer working mainly on a multi-tenant cloud platform for hotels, structured with NodeJS microservices and a React frontend.</p>
+                  <p className="edu-desc">Full-Stack developer mainly working on a multi-tenant cloud platform for hotels, structured with Node.js microservices and a React frontend.</p>
                 </div>
               </div>
             </div>
