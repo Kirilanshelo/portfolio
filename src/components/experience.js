@@ -28,7 +28,22 @@ const Experience = () => {
               <div className="row">
                 <div className="col">
                   <h5>Full-Stack Developer</h5>
-                  <p className="edu-desc"> I'm working mainly on the backend side of a platform that manage advertising on digital devices. </p>
+                  <p className="edu-desc"> My tasks are mainly focused on the backend side of a B2B platform that manage advertising on digital device. </p>
+                  <p className="edu-desc"> In my day to day work my tasks are:I take care of the automated tests </p>
+                  <ul className={`list-group-${theme}`}>
+                      <li className="list-group-item borderless">
+                          Develop and mantain about 15 services, most of them in Node.js, while others in TypeScript;
+                      </li>
+                      <li className="list-group-item borderless">
+                          Improve test coverage and bug fixing
+                      </li>
+                      <li className="list-group-item borderless">
+                          With my collegues we define define and document software requirements and specification
+                      </li>
+                      <li className="list-group-item borderless">
+                          CI/CD
+                      </li>
+                  </ul>
                 </div>
               </div>
             </div>
