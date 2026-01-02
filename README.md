@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# Enrico's Portfolio - Vue 3
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfolio personale sviluppato con **Vue 3**, **Vite**, **Pinia** e **Vue Router**.
 
-## Available Scripts
+Migrato da React a Vue 3 mantenendo tutte le funzionalità e lo stile originale.
 
-In the project directory, you can run:
+## 🚀 Tecnologie
 
-### `npm start`
+- **Vue 3** con Composition API (`<script setup>`)
+- **Vite** - Build tool veloce e moderno
+- **Pinia** - State management per gestione tema
+- **Vue Router** - Routing con hash navigation
+- **Bootstrap Vue Next** - Componenti UI
+- **FontAwesome** - Icone
+- **GitHub Pages** - Deployment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📦 Setup
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install
+```
 
-### `npm test`
+## 🛠️ Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Avvia il dev server:
 
-### `npm run build`
+```bash
+npm run dev
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Apri [http://localhost:5173/portfolio/](http://localhost:5173/portfolio/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🏗️ Build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Build per production:
 
-### `npm run eject`
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+I file saranno generati nella cartella `dist/`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🚢 Deploy
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Deploy su GitHub Pages:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm run deploy
+```
 
-## Learn More
+Oppure usa lo script `deploy.sh` (Linux/Mac):
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+bash deploy.sh
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ✨ Funzionalità
 
-### Code Splitting
+- **Theme Switcher**: Toggle tra tema chiaro e scuro con persistenza in localStorage
+- **Responsive Design**: Layout ottimizzato per mobile, tablet e desktop
+- **Smooth Scrolling**: Navigazione fluida tra le sezioni
+- **Portfolio Sections**:
+  - About Me
+  - Career Experience
+  - Education
+  - Skills & Languages
+  - Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📁 Struttura Progetto
 
-### Analyzing the Bundle Size
+```
+src/
+├── components/         # Componenti Vue
+│   ├── Navbar.vue
+│   ├── Header.vue
+│   ├── AboutMe.vue
+│   ├── Experience.vue
+│   ├── Abilities.vue
+│   ├── Footer.vue
+│   └── ThemeButton.vue
+├── stores/            # Pinia stores
+│   └── themeStore.js
+├── router/            # Vue Router config
+│   └── index.js
+├── assets/            # Immagini e risorse
+├── App.vue            # Componente root
+├── main.js            # Entry point
+└── App.css            # Stili globali
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🔄 Migrazione da React
 
-### Making a Progressive Web App
+Questo progetto è stato completamente migrato da React a Vue 3 mantenendo:
+- ✅ Stessa struttura visuale e CSS
+- ✅ Sistema di gestione tema (Context API → Pinia)
+- ✅ Tutte le funzionalità originali
+- ✅ Compatibilità GitHub Pages
+- ✅ Responsive design
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Principali cambiamenti:
 
-### Advanced Configuration
+| React | Vue 3 |
+|-------|-------|
+| `useState` | `ref` / `reactive` |
+| `useContext` | `useStore` (Pinia) |
+| `useEffect` | `watch` / `watchEffect` |
+| Context API | Pinia Store |
+| JSX | Template syntax |
+| react-bootstrap | bootstrap-vue-next |
+| CRA | Vite |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📄 License
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+© 2022-2026 Enrico Montanari
