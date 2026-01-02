@@ -1,8 +1,7 @@
 <template>
   <div id="getintouch" class="contact-me">
     <h2 :class="`subtitle-${theme}`">Get In Touch</h2>
-    <h3 :class="`section-title-${theme}`">If you like what you see.</h3>
-    <p>Contact me to if you want to discuss over something</p>
+    <p>Contact me for further information</p>
     <BButton 
       variant="danger" 
       :class="`btn-${theme}`" 

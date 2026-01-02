@@ -8,7 +8,7 @@
       I'm eager to learn new things, curiosity drives me to explore different fields and technologies. 
     </p>
     <p :class="`intro-${theme}`">
-      I would like to part of a team where I can contribute, grow, both personally and professionally, and make a difference.
+      I would like to be part of a team where I can contribute, grow, both personally and professionally, and make a difference.
     </p>
   </div>
 </template>

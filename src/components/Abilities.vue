@@ -21,13 +21,9 @@
               >
                 <div class="skill-header">
                   <span class="skill-name">{{ skill.name }}</span>
-                  <!-- <span class="skill-percentage">{{ skill.level }}%</span> -->
-                </div>
-                <div class="skill-bar-container">
-                  <div 
-                    :class="`skill-bar-fill-${theme}`" 
-                    :style="{ width: skill.level + '%' }"
-                  ></div>
+                  <span :class="`skill-badge ${getSkillLevelClass(skill.level)}`">
+                    {{ getSkillLevelText(skill.level) }}
+                  </span>
                 </div>
               </li>
             </ul>
@@ -53,13 +49,9 @@
               >
                 <div class="skill-header">
                   <span class="skill-name">{{ lang.name }}</span>
-                  <!-- <span class="skill-percentage">{{ lang.level }}%</span> -->
-                </div>
-                <div class="skill-bar-container">
-                  <div 
-                    :class="`skill-bar-fill-${theme}`" 
-                    :style="{ width: lang.level + '%' }"
-                  ></div>
+                  <span :class="`skill-badge ${getSkillLevelClass(lang.level)}`">
+                    {{ getSkillLevelText(lang.level) }}
+                  </span>
                 </div>
               </li>
             </ul>
@@ -101,6 +93,20 @@ const allLanguages = ref([
   { name: 'Italian', level: 100 },
   { name: 'English', level: 80 },
 ])
+
+// Funzione per determinare il testo del livello
+const getSkillLevelText = (level) => {
+  if (level < 50) return 'Basic'
+  if (level < 70) return 'Average'
+  return 'Good'
+}
+
+// Funzione per determinare la classe CSS del badge
+const getSkillLevelClass = (level) => {
+  if (level < 50) return 'skill-basic'
+  if (level < 70) return 'skill-average'
+  return 'skill-good'
+}
 </script>
 
 <style scoped>
@@ -110,41 +116,37 @@ const allLanguages = ref([
 
 .skill-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  margin-bottom: 0.5rem;
+  gap: 1rem; /* Spazio fisso tra nome e badge */
 }
 
 .skill-name {
   font-weight: 500;
 }
 
-.skill-percentage {
-  font-size: 0.875rem;
+.skill-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
-  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.skill-bar-container {
-  width: 100%;
-  height: 8px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  overflow: hidden;
+.skill-basic {
+  background-color: #FFC107;
+  color: #000;
 }
 
-.skill-bar-fill-light {
-  height: 100%;
-  background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
-  border-radius: 4px;
-  transition: width 0.6s ease;
+.skill-average {
+  background-color: #2196F3;
+  color: #fff;
 }
 
-.skill-bar-fill-dark {
-  height: 100%;
-  background: linear-gradient(90deg, #2196F3 0%, #64B5F6 100%);
-  border-radius: 4px;
-  transition: width 0.6s ease;
+.skill-good {
+  background-color: #4CAF50;
+  color: #fff;
 }
 
 /* Grid layout: 2 colonne su desktop, 1 su mobile */
@@ -156,7 +158,7 @@ const allLanguages = ref([
 
 @media (min-width: 768px) {
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
   }
 }
