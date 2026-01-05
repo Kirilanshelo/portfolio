@@ -4,7 +4,6 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  font-family: "Raleway";
 }
 
 .navbar-light {
@@ -106,7 +105,7 @@ p {
   background-color: #f4d474; /*f4d474; EEEBDD*/
   width: 100%;
   position: relative;
-  padding: 7% 15%;
+  padding: 5% 15%;
   color: black
 }
 
@@ -114,7 +113,7 @@ p {
   background-color: #251749; /*f4d474; EEEBDD*/
   width: 100%;
   position: relative;
-  padding: 7% 15%;
+  padding: 5% 15%;
   color: white
 }
 
@@ -126,10 +125,21 @@ p {
   color: #10A19D;
 }
 
+.atkinson-hyperlegible-regular {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.atkinson-hyperlegible-bold {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 .title-name-light {
   font-size: 5.625em;
   font-weight: 600;
-  font-family: 'Sacramento', sans-serif;
   color: #000;
   line-height: 2;
 }
@@ -137,7 +147,6 @@ p {
 .title-name-dark {
   font-size: 5.625em;
   font-weight: 600;
-  font-family: 'Sacramento', sans-serif;
   color: #FFF;
   line-height: 2;
 }
@@ -149,14 +158,12 @@ p {
 
 .subtitle-light {
   color: #000;
-  font-family: 'Raleway', sans-serif;
   font-size: 3rem;
   padding: 30px;
 }
 
 .subtitle-dark {
   color: #FFF;
-  font-family: 'Raleway', sans-serif;
   font-size: 3rem;
   padding: 30px;
 }
@@ -202,7 +209,6 @@ p {
 
 a {
   color: #EF5253;
-  font-family: 'Raleway', sans-serif;
   text-decoration: none;
 }
 
@@ -297,13 +303,11 @@ a:hover {
 
 .section-title-light {
   font-size: 2.5rem;
-  font-family: 'Raleway', sans-serif;
   color: #CE1212; /*#CE1212; #CE1212 */
 }
 
 .section-title-dark {
   font-size: 2.5rem;
-  font-family: 'Raleway', sans-serif;
   color: #10A19D; /*#CE1212; #CE1212 */
 }
 
@@ -346,7 +350,6 @@ a:hover {
   background-image: -webkit-gradient(to bottom, #EF5253, #CE1212); */
   border-radius: 10px;
   color: #FFFFFF;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: bold;
   padding: 10px;
@@ -367,7 +370,6 @@ a:hover {
   background-image: -webkit-gradient(to bottom, #EF5253, #CE1212); */
   border-radius: 10px;
   color: #FFFFFF;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1rem;
   font-weight: bold;
   padding: 10px;
@@ -382,7 +384,6 @@ a:hover {
 
 .footer-link-light {
   color: #CE1212;
-  font-family: 'Montserrat', sans-serif;
   /* line-height: 2; */
   margin: auto 30px;
   text-decoration: none;
@@ -390,7 +391,6 @@ a:hover {
 
 .footer-link-dark {
   color: #10A19D;
-  font-family: 'Montserrat', sans-serif;
   /* line-height: 2; */
   margin: auto 30px;
   text-decoration: none;

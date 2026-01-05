@@ -1,5 +1,5 @@
 <template>
-  <div class="App">
+  <div class="App atkinson-hyperlegible-regular">
     <div :class="`top-container-${theme}`">
       <Navbar />
       <Header />
@@ -12,6 +12,7 @@
     <div :class="`top-container-${theme}`">
       <Footer />
     </div>
+    <ScrollToTop />
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import AboutMe from './components/AboutMe.vue'
 import Experience from './components/Experience.vue'
 import Abilities from './components/Abilities.vue'
 import Footer from './components/Footer.vue'
+import ScrollToTop from './components/ScrollToTop.vue'
 
 const themeStore = useThemeStore()
 const theme = computed(() => themeStore.theme)

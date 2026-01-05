@@ -1,64 +1,63 @@
 <template>
   <div id="skills" :class="`skills-${theme}`">
-    <h2 :class="`subtitle-${theme}`">My Abilities</h2>
+    <h2 :class="`subtitle-${theme} atkinson-hyperlegible-bold`">My Abilities</h2>
     <div class="row exp-row">
-      <div class="col-lg-3 col-0"></div>
-      <div class="col-lg-6 col-12 ab-section">
-        <!-- Skills Section -->
-        <div class="row">
-          <div class="col-12">
-            <h3 class="section-title">Skills</h3>
+      <div class="col-lg-2 col-0"></div>
+      <div class="col-lg-8 col-12 ab-section">
+        
+        <!-- Expert Level -->
+        <div class="skill-category">
+          <h3 :class="`category-title-${theme}`">I'm good at</h3>
+          <div class="skills-cards">
+            <div 
+              v-for="skill in goodSkills" 
+              :key="skill.name"
+              :class="`skill-card skill-card-${theme}`"
+              :title="skill.name"
+            >
+              <img :src="skill.icon" :alt="skill.name" class="skill-icon">
+              <span class="skill-label">{{ skill.name }}</span>
+            </div>
           </div>
         </div>
-        
-        <div class="row exp-row">
-          <div class="col-12">
-            <ul :class="`list-group-${theme} skills-grid`">
-              <li 
-                v-for="skill in allSkills" 
-                :key="skill.name" 
-                class="list-group-item borderless skill-item"
-              >
-                <div class="skill-header">
-                  <span class="skill-name">{{ skill.name }}</span>
-                  <span :class="`skill-badge ${getSkillLevelClass(skill.level)}`">
-                    {{ getSkillLevelText(skill.level) }}
-                  </span>
-                </div>
-              </li>
-            </ul>
+
+        <!-- Familiar Level -->
+        <div class="skill-category">
+          <h3 :class="`category-title-${theme}`">I'm familiar with</h3>
+          <div class="skills-cards">
+            <div 
+              v-for="skill in familiarSkills" 
+              :key="skill.name"
+              :class="`skill-card skill-card-${theme}`"
+              :title="skill.name"
+            >
+              <img :src="skill.icon" :alt="skill.name" class="skill-icon">
+              <span class="skill-label">{{ skill.name }}</span>
+            </div>
           </div>
         </div>
 
         <hr class="line-break"/>
 
-        <!-- Languages Section -->
-        <div class="row">
-          <div class="col-12">
-            <h3 class="section-title">Languages</h3>
+<!-- Languages Section -->
+        <div class="skill-category">
+          <h3 :class="`category-title-${theme}`">Languages</h3>
+          <div class="languages-list">
+            <div 
+              v-for="lang in allLanguages" 
+              :key="lang.name"
+              class="language-item"
+            >
+              <div class="language-info">
+                <h4 :class="`language-name-${theme}`">{{ lang.name }}</h4>
+                <p :class="`language-proficiency-${theme}`">{{ lang.proficiency }}</p>
+              </div>
+            </div>
           </div>
         </div>
-        
-        <div class="row exp-row">
-          <div class="col-12">
-            <ul :class="`list-group-${theme} skills-grid`">
-              <li 
-                v-for="lang in allLanguages" 
-                :key="lang.name" 
-                class="list-group-item borderless skill-item"
-              >
-                <div class="skill-header">
-                  <span class="skill-name">{{ lang.name }}</span>
-                  <span :class="`skill-badge ${getSkillLevelClass(lang.level)}`">
-                    {{ getSkillLevelText(lang.level) }}
-                  </span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+
       </div>
-      <div class="col-md-3 col-0"></div>
+      <div class="col-lg-2 col-0"></div>
     </div>
   </div>
 </template>
@@ -70,96 +69,250 @@ import { useThemeStore } from '@/stores/themeStore'
 const themeStore = useThemeStore()
 const theme = computed(() => themeStore.theme)
 
-// Lista unificata di tutte le skill
-const allSkills = ref([
-  { name: 'Javascript', level: 80 },
-  { name: 'Node.js', level: 80 },
-  { name: 'Typescript', level: 80 },
-  { name: 'PostgreSQL', level: 70 },
-  { name: 'Kafka', level: 60 },
-  { name: 'HTML (5)', level: 60 },
-  { name: 'Elasticsearch', level: 50 },
-  { name: 'MongoDB', level: 50 },
-  { name: 'CSS (3)', level: 40 },
-  { name: 'React', level: 40 },
-  { name: 'Vue.js', level: 40 },
-  { name: 'Bootstrap (4)', level: 40 },
-  { name: 'React-native', level: 40 },
-  { name: 'Kubernetes', level: 30 }
+// Icone da CDN (Simple Icons o DevIcons)
+const goodSkills = ref([
+  { 
+    name: 'Javascript', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
+  },
+  { 
+    name: 'Node.js', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
+  },
+  { 
+    name: 'TypeScript', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
+  },
+  { 
+    name: 'PostgreSQL', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
+  },
+  { 
+    name: 'Kafka', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg'
+  },
+
+  { 
+    name: 'Elasticsearch', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg'
+  },
+  { 
+    name: 'MongoDB', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
+  }
 ])
 
-// Lista unificata di tutte le lingue
+const familiarSkills = ref([
+  { 
+    name: 'React', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+  },
+  { 
+    name: 'Vue.js', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
+  },
+  { 
+    name: 'Bootstrap', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg'
+  },
+    { 
+    name: 'CSS3', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
+  },
+  { 
+    name: 'HTML5', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
+  },
+  { 
+    name: 'Kubernetes', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg'
+  },
+])
+
 const allLanguages = ref([
-  { name: 'Italian', level: 100 },
-  { name: 'English', level: 80 },
+  { name: 'Italian', proficiency: 'Native speaker', flag: '🇮🇹' },
+  { name: 'English', proficiency: 'Fluent in writing, good in listening and speaking', flag: '🇬🇧' }
 ])
-
-// Funzione per determinare il testo del livello
-const getSkillLevelText = (level) => {
-  if (level < 50) return 'Basic'
-  if (level < 70) return 'Average'
-  return 'Good'
-}
-
-// Funzione per determinare la classe CSS del badge
-const getSkillLevelClass = (level) => {
-  if (level < 50) return 'skill-basic'
-  if (level < 70) return 'skill-average'
-  return 'skill-good'
-}
 </script>
 
 <style scoped>
-.skill-item {
-  padding: 0.75rem 0;
+.skill-category {
+  margin: 3rem 0;
 }
 
-.skill-header {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1rem; /* Spazio fisso tra nome e badge */
-}
-
-.skill-name {
-  font-weight: 500;
-}
-
-.skill-badge {
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
+.category-title-light {
+  font-size: 1.8rem;
+  color: #CE1212;
+  margin-bottom: 1.5rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
-.skill-basic {
-  background-color: #FFC107;
+.category-title-dark {
+  font-size: 1.8rem;
+  color: #10A19D;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.skills-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.skill-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 120px;
+  height: 140px;
+}
+
+.skill-card-light {
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+}
+
+.skill-card-dark {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card-light:hover {
+  border-color: #CE1212;
+}
+
+.skill-card-dark:hover {
+  border-color: #10A19D;
+}
+
+.skill-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 0.75rem;
+  object-fit: contain;
+}
+
+.skill-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Languages Section - Different layout */
+.languages-list {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.language-flag {
+  font-size: 3.5rem;
+  flex-shrink: 0;
+}
+
+.language-info {
+  text-align: left;
+  flex: 1;
+}
+
+.language-name-light,
+.language-name-dark {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+}
+
+.language-name-light {
   color: #000;
 }
 
-.skill-average {
-  background-color: #2196F3;
+.language-name-dark {
   color: #fff;
 }
 
-.skill-good {
-  background-color: #4CAF50;
-  color: #fff;
+.language-proficiency-light,
+.language-proficiency-dark {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
 }
 
-/* Grid layout: 2 colonne su desktop, 1 su mobile */
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
+.language-proficiency-light {
+  color: #666;
 }
 
-@media (min-width: 768px) {
-  .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
+.language-proficiency-dark {
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .skills-cards {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1rem;
+  }
+
+  .skill-card {
+    min-width: 100px;
+    height: 120px;
+    padding: 1rem;
+  }
+
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .languages-list {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .language-item {
+    min-width: auto;
+  }
+  
+  .language-info {
+    text-align: center;
+  }
+  
+  .language-flag {
+    font-size: 2.5rem;
+  }
+
+  .language-name-light,
+  .language-name-dark {
+    font-size: 1.2rem;
+  }
+
+  .language-proficiency-light,
+  .language-proficiency-dark {
+    font-size: 0.9rem;
   }
 }
 </style>
