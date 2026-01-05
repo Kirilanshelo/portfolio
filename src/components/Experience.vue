@@ -237,7 +237,7 @@ const toggleCourseDescription = (index) => {
 
 <style scoped>
 .course-link-centered {
-  text-align: center;
+  text-align: left;
 }
 
 .description-toggle {
@@ -270,10 +270,19 @@ const toggleCourseDescription = (index) => {
   transition: max-height 0.3s ease, opacity 0.3s ease;
 }
 
+.exp-section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+}
+
 /* Mobile only styles */
 @media (max-width: 768px) {
   .mobile-only {
     display: block;
+  }
+
+  .course-link-centered {
+    text-align: center;
   }
 
   .course-description {
