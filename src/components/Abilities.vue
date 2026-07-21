@@ -2,8 +2,8 @@
   <div id="skills" :class="`skills-${theme}`">
     <h2 :class="`subtitle-${theme} atkinson-hyperlegible-bold`">My Abilities</h2>
     <div class="row exp-row">
-      <div class="col-lg-2 col-0"></div>
-      <div class="col-lg-8 col-12 ab-section">
+      <div class="col-md-3 col-0"></div>
+      <div class="col-md-6 col-12 ab-section">
         
         <!-- Expert Level -->
         <div class="skill-category">
@@ -73,7 +73,7 @@
         </div>
 
       </div>
-      <div class="col-lg-2 col-0"></div>
+      <div class="col-md-3 col-0"></div>
     </div>
   </div>
 </template>
