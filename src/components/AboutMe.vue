@@ -2,9 +2,10 @@
   <div id="aboutme" :class="`profile-${theme}`">
     <h2 :class="`subtitle-${theme} atkinson-hyperlegible-bold`">Hello.</h2>
     <p :class="`intro-${theme}`">
-      I studied to be an astrophysicist, but eventually became a software developer.
-      I'm eager to learn new things, curiosity drives me to explore different fields and technologies. 
-      I would like to be part of a team where I can contribute, grow, both personally and professionally, and make a difference.
+      Astrophysicist by training, software developer by passion.
+      I used to study the stars, now I mostly stare at code, and honestly I love it.
+      These days I build backend systems and distributed services, and I get a real kick out of turning messy problems into something clean and reliable.
+      I'm endlessly curious, always poking at new tools and ideas, and I do my best work on a team where we can build cool things and grow together.
     </p>
   </div>
 </template>

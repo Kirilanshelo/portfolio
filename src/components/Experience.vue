@@ -157,8 +157,15 @@ const theme = computed(() => themeStore.theme)
 
 const career = ref([
   {
+    company: 'Xuniplay s.r.l.',
+    period: 'Feb 2026 - present',
+    role: 'Software Developer',
+    description: 'My tasks are mainly focused on the backend side of a software for digital signage. Since the advent of AI, we are also integrating it in our day to day tasks.',
+    technologies: 'Node.js, Typescript, Kafka, MQTT, PostgreSQL, Redis, Kubernetes, Piscina, Mastra'
+  },
+  {
     company: 'fabbricadigitale s.r.l.',
-    period: 'Sept 2021 - Present',
+    period: 'Sept 2021 - January 2026',
     role: 'Software Developer',
     description: 'My tasks are mainly focused on the backend side of a software for digital signage. Since the advent of AI, we are also integrating it in our day to day coding tasks.',
     // tasks: [

@@ -37,6 +37,22 @@
           </div>
         </div>
 
+        <!-- Free time Level -->
+        <div class="skill-category">
+          <h3 :class="`category-title-${theme}`">In my free time I play with</h3>
+          <div class="skills-cards">
+            <div 
+              v-for="skill in freeTimeSkills" 
+              :key="skill.name"
+              :class="`skill-card skill-card-${theme}`"
+              :title="skill.name"
+            >
+              <img :src="skill.icon" :alt="skill.name" class="skill-icon">
+              <span class="skill-label">{{ skill.name }}</span>
+            </div>
+          </div>
+        </div>
+
         <hr class="line-break"/>
 
 <!-- Languages Section -->
@@ -65,6 +81,7 @@
 <script setup>
 import { computed, ref } from 'vue'
 import { useThemeStore } from '@/stores/themeStore'
+import mastraIcon from '@/assets/mastra.svg'
 
 const themeStore = useThemeStore()
 const theme = computed(() => themeStore.theme)
@@ -95,14 +112,14 @@ const goodSkills = ref([
   { 
     name: 'Elasticsearch', 
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg'
-  },
-  { 
-    name: 'MongoDB', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
   }
 ])
 
 const familiarSkills = ref([
+  { 
+    name: 'MongoDB', 
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
+  },
   { 
     name: 'React', 
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
@@ -127,6 +144,17 @@ const familiarSkills = ref([
     name: 'Kubernetes', 
     icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg'
   },
+  {
+    name: 'Mastra',
+    icon: mastraIcon
+  },
+])
+
+const freeTimeSkills = ref([
+  {
+    name: 'Godot',
+    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg'
+  }
 ])
 
 const allLanguages = ref([
@@ -156,7 +184,7 @@ const allLanguages = ref([
 
 .skills-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   gap: 1.5rem;
   justify-items: center;
 }
