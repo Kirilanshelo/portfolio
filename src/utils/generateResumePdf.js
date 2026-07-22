@@ -217,6 +217,12 @@ function buildDocDefinition() {
     )
   })
 
+  // ---- Skills ----
+  content.push(sectionHeader('Skills'))
+  content.push(twoColRow('Proficient', skillNames(skills.good)))
+  content.push(twoColRow('Familiar with', skillNames(skills.familiar)))
+  content.push(twoColRow('For fun', skillNames(skills.freeTime)))
+
   // ---- Education ----
   content.push(sectionHeader('Education'))
   education.forEach((edu) => {
@@ -249,12 +255,6 @@ function buildDocDefinition() {
       })
     )
   })
-
-  // ---- Skills ----
-  content.push(sectionHeader('Skills'))
-  content.push(twoColRow('Proficient', skillNames(skills.good)))
-  content.push(twoColRow('Familiar with', skillNames(skills.familiar)))
-  content.push(twoColRow('For fun', skillNames(skills.freeTime)))
 
   // ---- Languages ----
   content.push(sectionHeader('Languages'))
