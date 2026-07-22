@@ -21,6 +21,16 @@
               <BNavItem>
                 <a :class="theme" href="#getintouch">Get in touch</a>
               </BNavItem>
+              <BNavItem>
+                <a
+                  :class="theme"
+                  href="#"
+                  role="button"
+                  @click.prevent="downloadCv"
+                >
+                  Download CV
+                </a>
+              </BNavItem>
             </BNavbarNav>
           </BCollapse>
         </BContainer>
@@ -42,7 +52,16 @@ import {
   BNavItem
 } from 'bootstrap-vue-next'
 import ThemeButton from './ThemeButton.vue'
+import { generateResumePdf } from '@/utils/generateResumePdf'
 
 const themeStore = useThemeStore()
 const theme = computed(() => themeStore.theme)
+
+const downloadCv = async () => {
+  try {
+    await generateResumePdf()
+  } catch (err) {
+    console.error('CV generation failed:', err)
+  }
+}
 </script>

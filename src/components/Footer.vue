@@ -5,7 +5,7 @@
     <BButton 
       variant="danger" 
       :class="`btn-${theme}`" 
-      href="mailto:enrico.montanari13@gmail.com"
+      :href="`mailto:${contacts.email}`"
     >
       GET IN TOUCH
     </BButton>
@@ -14,7 +14,7 @@
   <div class="social-links">
     <a 
       :class="`footer-link-${theme}`" 
-      href="https://www.linkedin.com/in/EnricoMontanari13/" 
+      :href="contacts.linkedin" 
       target="_blank" 
       rel="noopener noreferrer"
       aria-label="LinkedIn"
@@ -23,7 +23,7 @@
     </a>
     <a 
       :class="`footer-link-${theme}`" 
-      href="https://github.com/Kirilanshelo" 
+      :href="contacts.github" 
       target="_blank" 
       rel="noopener noreferrer"
       aria-label="Github"
@@ -39,6 +39,7 @@
 import { computed } from 'vue'
 import { useThemeStore } from '@/stores/themeStore'
 import { BButton } from 'bootstrap-vue-next'
+import { contacts } from '@/data/resume'
 
 const themeStore = useThemeStore()
 const theme = computed(() => themeStore.theme)

@@ -79,88 +79,28 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { useThemeStore } from '@/stores/themeStore'
 import mastraIcon from '@/assets/mastra.svg'
+import { skills, languages } from '@/data/resume'
 
 const themeStore = useThemeStore()
 const theme = computed(() => themeStore.theme)
 
-// Icone da CDN (Simple Icons o DevIcons)
-const goodSkills = ref([
-  { 
-    name: 'Javascript', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
-  },
-  { 
-    name: 'Node.js', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
-  },
-  { 
-    name: 'TypeScript', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg'
-  },
-  { 
-    name: 'PostgreSQL', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg'
-  },
-  { 
-    name: 'Kafka', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg'
-  },
+// Local assets are resolved here to keep the shared data module bundler-agnostic.
+const localIcons = { mastra: mastraIcon }
+const resolveIcon = (skill) => skill.icon || localIcons[skill.localIcon] || ''
 
-  { 
-    name: 'Elasticsearch', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg'
-  }
-])
-
-const familiarSkills = ref([
-  { 
-    name: 'MongoDB', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg'
-  },
-  { 
-    name: 'React', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
-  },
-  { 
-    name: 'Vue.js', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg'
-  },
-  { 
-    name: 'Bootstrap', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg'
-  },
-    { 
-    name: 'CSS3', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
-  },
-  { 
-    name: 'HTML5', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
-  },
-  { 
-    name: 'Kubernetes', 
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg'
-  },
-  {
-    name: 'Mastra',
-    icon: mastraIcon
-  },
-])
-
-const freeTimeSkills = ref([
-  {
-    name: 'Godot',
-    icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/godot/godot-original.svg'
-  }
-])
-
-const allLanguages = ref([
-  { name: 'Italian', proficiency: 'Native speaker', flag: '🇮🇹' },
-  { name: 'English', proficiency: 'Fluent in writing, good in listening and speaking', flag: '🇬🇧' }
-])
+const goodSkills = computed(() =>
+  skills.good.map((s) => ({ name: s.name, icon: resolveIcon(s) }))
+)
+const familiarSkills = computed(() =>
+  skills.familiar.map((s) => ({ name: s.name, icon: resolveIcon(s) }))
+)
+const freeTimeSkills = computed(() =>
+  skills.freeTime.map((s) => ({ name: s.name, icon: resolveIcon(s) }))
+)
+const allLanguages = computed(() => languages)
 </script>
 
 <style scoped>
