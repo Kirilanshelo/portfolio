@@ -129,6 +129,7 @@ export const skills = {
   freeTime: [
     { name: 'Godot', icon: `${CDN}/godot/godot-original.svg` },
     { name: 'Rust', icon: `${CDN}/rust/rust-original.svg` },
+    { name: 'Electron', icon: `${CDN}/electron/electron-original.svg` },
   ],
 }
 

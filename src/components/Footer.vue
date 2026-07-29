@@ -9,6 +9,13 @@
     >
       GET IN TOUCH
     </BButton>
+    <BButton 
+      variant="danger" 
+      :class="`btn-${theme}`" 
+      @click="downloadCv"
+    >
+      DOWNLOAD CV
+    </BButton>
   </div>
 
   <div class="social-links">
@@ -40,9 +47,18 @@ import { computed } from 'vue'
 import { useThemeStore } from '@/stores/themeStore'
 import { BButton } from 'bootstrap-vue-next'
 import { contacts } from '@/data/resume'
+import { generateResumePdf } from '@/utils/generateResumePdf'
 
 const themeStore = useThemeStore()
 const theme = computed(() => themeStore.theme)
+
+const downloadCv = async () => {
+  try {
+    await generateResumePdf()
+  } catch (err) {
+    console.error('CV generation failed:', err)
+  }
+}
 </script>
 
 <style scoped>

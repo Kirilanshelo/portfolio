@@ -8,8 +8,9 @@
       <AboutMe />
       <Experience />
       <Abilities />
+      <Projects />
     </div>
-    <div :class="`top-container-${theme}`">
+    <div :class="`footer-container-${theme}`">
       <Footer />
     </div>
     <ScrollToTop />
@@ -24,6 +25,7 @@ import Header from './components/Header.vue'
 import AboutMe from './components/AboutMe.vue'
 import Experience from './components/Experience.vue'
 import Abilities from './components/Abilities.vue'
+import Projects from './components/Projects.vue'
 import Footer from './components/Footer.vue'
 import ScrollToTop from './components/ScrollToTop.vue'
 

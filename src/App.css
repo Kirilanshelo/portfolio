@@ -117,6 +117,22 @@ p {
   color: white
 }
 
+.footer-container-light {
+  background-color: #FFF;
+  width: 100%;
+  position: relative;
+  padding: 5% 15%;
+  color: black
+}
+
+.footer-container-dark {
+  background-color: #495579;
+  width: 100%;
+  position: relative;
+  padding: 5% 15%;
+  color: white
+}
+
 .emph-name-light {
   color: #CE1212;
 }
@@ -264,6 +280,18 @@ a:hover {
 .skills-dark {
   padding: 3% 0;
   background-color: #495579!important;
+  color: #FFF
+}
+
+.projects-light {
+  padding: 3% 0;
+  background-color: #f4d474;
+  color: #000
+}
+
+.projects-dark {
+  padding: 3% 0;
+  background-color: #251749;
   color: #FFF
 }
 

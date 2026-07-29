@@ -19,6 +19,9 @@
                 <a :class="theme" href="#skills">Abilities</a>
               </BNavItem>
               <BNavItem>
+                <a :class="theme" href="#projects">Projects</a>
+              </BNavItem>
+              <BNavItem>
                 <a :class="theme" href="#getintouch">Get in touch</a>
               </BNavItem>
               <BNavItem>

@@ -42,17 +42,7 @@ I file saranno generati nella cartella `dist/`.
 
 ## 🚢 Deploy
 
-Deploy su GitHub Pages:
-
-```bash
-npm run deploy
-```
-
-Oppure usa lo script `deploy.sh` (Linux/Mac):
-
-```bash
-bash deploy.sh
-```
+Il deploy su GitHub Pages è automatico tramite GitHub Actions: ad ogni push su `master` o `develop` il workflow `.github/workflows/deploy-gh-pages.yml` builda il progetto e pubblica la cartella `dist/`.
 
 ## ✨ Funzionalità
 
