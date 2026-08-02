@@ -130,7 +130,7 @@ const CONTENT_WIDTH = PAGE_WIDTH - MARGIN * 2
 
 const sentenceCase = (s) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase()
 
-const sectionHeader = (label) => ({
+const sectionHeader = (label, options = {}) => ({
   stack: [
     { text: sentenceCase(label), style: 'sectionTitle' },
     {
@@ -141,6 +141,7 @@ const sectionHeader = (label) => ({
     },
   ],
   margin: [0, 10, 0, 0],
+  ...(options.pageBreak ? { pageBreak: options.pageBreak } : {}),
 })
 
 // Two-column entry: main content on the left, date pushed to the right.
@@ -253,8 +254,8 @@ function buildDocDefinition() {
   content.push(twoColRow('Familiar with', skillNames(skills.familiar)))
   content.push(twoColRow('For fun', skillNames(skills.freeTime)))
 
-  // ---- Education ----
-  content.push(sectionHeader('Education'))
+  // ---- Education ---- (starts on a new page so it isn't orphaned)
+  content.push(sectionHeader('Education', { pageBreak: 'before' }))
   education.forEach((edu) => {
     content.push(
       entry({
