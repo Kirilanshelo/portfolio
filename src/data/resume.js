@@ -14,13 +14,28 @@ export const contacts = {
   linkedinLabel: 'Enrico Montanari',
   github: 'https://github.com/Kirilanshelo',
   githubLabel: 'Kirilanshelo',
+  // Shown in the CV/PDF only, under the role.
+  // The phone number is kept out of the repository: it is read from the
+  // VITE_CV_PHONE env var (set it in .env.local, which is gitignored).
+  phone: import.meta.env.VITE_CV_PHONE || '',
+  city: 'Mestre, Italy',
 }
 
+// Short version, shown on the website.
 export const about =
   'Astrophysicist by training, software developer by passion. ' +
   'I used to study the stars, now I mostly stare at code, and honestly I love it. ' +
-  'These days I build backend systems and distributed services, and I get a real kick out of turning messy problems into something clean and reliable. ' +
-  "I'm endlessly curious, always poking at new tools and ideas, and I do my best work on a team where we can build cool things and grow together."
+  'These days I build backend systems and distributed services, lately with a good dose of AI and agentic tooling, and I get a real kick out of turning messy problems into something clean and reliable. ' +
+  "I'm endlessly curious, always tinkering with side projects and new ideas, and I do my best work on a team where we can build cool things and grow together. " +
+  'When I can, I try to make time to stay in shape (gym, five-a-side football, running) and to play Magic: The Gathering with friends.'
+
+// Longer version, used only in the CV/PDF profile.
+export const aboutLong =
+  'Astrophysicist by training and software developer by passion. ' +
+  'After studying the physics of stars and black holes, I moved into software and never looked back. ' +
+  'Today I focus on backend development and distributed systems: gathering requirements, designing services and turning complex, messy problems into clean and reliable solutions, most recently working with AI and agentic capabilities in production. ' +
+  'I am a hands-on, endlessly curious engineer who likes to understand not just how something works, but why it was built that way. ' +
+  'I do my best work on a team where we can build ambitious things and grow together, and outside of work I channel the same curiosity into personal projects, from 2D game development to small tools that remove friction from the things I care about.'
 
 export const career = [
   {

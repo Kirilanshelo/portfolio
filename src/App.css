@@ -142,13 +142,13 @@ p {
 }
 
 .atkinson-hyperlegible-regular {
-  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 .atkinson-hyperlegible-bold {
-  font-family: "Atkinson Hyperlegible Next", sans-serif;
+  font-family: "Barlow", sans-serif;
   font-weight: 700;
   font-style: normal;
 }
@@ -260,12 +260,12 @@ a:hover {
   color: #FFF
 }
 .edu-desc {
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 @media (max-width: 800px) {
   .edu-desc {
-    font-size: 1rem;
+    font-size: 1.1rem;
     width: 80%;
     margin: auto;
   }
